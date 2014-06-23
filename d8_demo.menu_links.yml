@@ -1,0 +1,5 @@
+d8_demo.d8demo:
+  title: D8 demo Link
+  description: 'This is a d8 demo link'
+  parent: system.admin_structure
+  route_name: d8_demo.d8demo
