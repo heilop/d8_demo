@@ -18,8 +18,17 @@ class D8DemoBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
+
+    $config = $this->getConfiguration();
+
+    if (isset($config['d8_demo_block_settings']) && !empty($config['d8_demo_block_settings'])) {
+      $message = $config['d8_demo_block_settings'];
+    }
+    else{
+      $message = $this->t('This is default message');
+    }
     return array(
-      '#markup' => $this->t('My first block - D8'),
+      '#markup' => $this->t('D8 demo message: @message', array('@message' => $message)),
     );
   }
 
@@ -28,5 +37,31 @@ class D8DemoBlock extends BlockBase {
    */
   public function access(AccountInterface $account) {
     return $account->hasPermission('access content');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function blockForm($form, &$form_state) {
+
+    $form = parent::blockForm($form, $form_state);
+
+    $config = $this->getConfiguration();
+
+    $form['d8_demo_block_settings'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Message'),
+      '#description' => $this->t('Write your message to show!'),
+      '#default_value' => isset($config['d8_demo_block_settings']) ? $config['d8_demo_block_settings'] : '',
+    );
+
+    return $form;
+  }
+
+  /**
+  * {@inheritdoc}
+  */
+  public function blockSubmit($form, &$form) {
+    $this->setConfigurationValue('d8_demo_block_settings', $form_state['values']['d8_demo_block_settings']);
   }
 }
