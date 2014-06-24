@@ -25,7 +25,7 @@ class D8DemoBlock extends BlockBase {
   public function build() {
 
     $config = $this->getConfiguration();
-
+    dpm($config);
     if (isset($config['d8_demo_block_settings']) && !empty($config['d8_demo_block_settings'])) {
       $message = $config['d8_demo_block_settings'];
     }
@@ -33,7 +33,7 @@ class D8DemoBlock extends BlockBase {
       $message = $this->t('This is default message');
     }
     return array(
-      '#markup' => $this->t('D8 demo message: @message', array('@message' => $message)),
+      '#markup' => $this->t('D8 demo message: </br>@message', array('@message' => $message)),
     );
   }
 
@@ -66,7 +66,8 @@ class D8DemoBlock extends BlockBase {
   /**
   * {@inheritdoc}
   */
-  public function blockSubmit($form, &$form) {
+  public function blockSubmit($form, &$form_state) {
+
     $this->setConfigurationValue('d8_demo_block_settings', $form_state['values']['d8_demo_block_settings']);
   }
 }
