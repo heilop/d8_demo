@@ -1,8 +1,13 @@
 <?php
+/**
+* @file
+* Contains \Drupal\d8_demo\Plugin\Block\D8DemoBlock
+*/
+
 namespace \Drupal\d8_demo\Plugin\Block;
 
 use \Drupal\block\BlockBase;
-use \Drupal\core\Session\AccountInterface;
+use \Drupal\Core\Session\AccountInterface;
 
 /**
  * Provide a demo block.
