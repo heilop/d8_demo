@@ -4,10 +4,10 @@
 * Contains \Drupal\d8_demo\Plugin\Block\D8DemoBlock
 */
 
-namespace \Drupal\d8_demo\Plugin\Block;
+namespace Drupal\d8_demo\Plugin\Block;
 
-use \Drupal\block\BlockBase;
-use \Drupal\Core\Session\AccountInterface;
+use Drupal\block\BlockBase;
+use Drupal\Core\Session\AccountInterface;
 
 /**
  * Provide a demo block.
