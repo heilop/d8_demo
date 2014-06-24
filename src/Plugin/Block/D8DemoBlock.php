@@ -25,7 +25,7 @@ class D8DemoBlock extends BlockBase {
   public function build() {
 
     $config = $this->getConfiguration();
-    dpm($config);
+
     if (isset($config['d8_demo_block_settings']) && !empty($config['d8_demo_block_settings'])) {
       $message = $config['d8_demo_block_settings'];
     }
