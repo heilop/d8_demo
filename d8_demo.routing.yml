@@ -6,6 +6,14 @@ d8_demo.d8demo:
   requirements:
     _permission: 'access content'
 
+d8_demo.d8demo2:
+  path: '/demo/page/{name}'
+  defaults:
+    _content: '\Drupal\d8_demo\Controller\D8DemoController::d8Demo2'
+    _title: 'My first dynamic page - Drupal 8'
+  requirements:
+    _permission: 'access content'
+
 d8_demo.form:
   path: '/demo/form'
   defaults:
