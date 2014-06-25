@@ -23,7 +23,7 @@ class D8DemoController {
   }
 
   /**
-   * Callback d8Demo page example.
+   * Callback d8Demo2 page example with argument.
    * @return markup
    */
   public function d8Demo2($name) {
