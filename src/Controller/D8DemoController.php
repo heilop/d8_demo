@@ -16,7 +16,7 @@ class D8DemoController {
    */
   public function d8Demo() {
     return array(
-      '#prefix' => '<div class="d8-test-clas">',
+      '#prefix' => '<div class="d8-test-class">',
       '#suffix' => '</div>',
       '#markup' => t('My first page in drupal 8.'),
     );
@@ -28,7 +28,7 @@ class D8DemoController {
    */
   public function d8Demo2($name) {
     return array(
-      '#prefix' => '<div class="d8-test-clas">',
+      '#prefix' => '<div class="d8-test-class">',
       '#suffix' => '</div>',
       'hello' => array(
         '#prefix' => '<em><h3 class="hello-name">',
